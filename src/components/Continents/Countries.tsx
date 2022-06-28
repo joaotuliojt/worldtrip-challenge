@@ -15,7 +15,7 @@ interface CountriesProps {
 export function Countries({ countries }: CountriesProps) {
   return (
     <Grid my="6" templateColumns={['1fr', 'repeat(3, 1fr)', 'repeat(4, 1fr)']} gap="3rem">
-      {countries.map((country, index) => (
+      {countries?.map((country, index) => (
         <CountryCard key={index} country={country} />
       ))}
     </Grid>

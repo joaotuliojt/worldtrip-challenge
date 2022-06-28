@@ -5,9 +5,16 @@ import { homeImgInfos } from '../constants/values'
 
 import { Carousel } from '../components/Carousel'
 import { useBreakpointValue } from '@chakra-ui/react'
+import { useEffect } from 'react'
 
 
 const Home: NextPage = () => {
+
+
+  /* useEffect(() => {
+    fetch('http://localhost:3000/api/continents/asia')
+      .then(response => response.json().then(data => console.log(data)))
+  }, []) */
 
   const isMdScreen = useBreakpointValue({
     base: false,

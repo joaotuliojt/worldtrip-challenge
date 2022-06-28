@@ -7,6 +7,11 @@ import "swiper/css/bundle";
 import "../styles/global.scss"
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
+import { makeServer } from '../services/miragejs';
+import { createServer } from 'miragejs';
+
+
+makeServer();
 
 function MyApp({ Component, pageProps }: AppProps) {
 
@@ -14,6 +19,8 @@ function MyApp({ Component, pageProps }: AppProps) {
     Aos.init();
     Aos.refresh();
   }, [])
+
+
   return (
     <ChakraProvider theme={theme}>
       <Component {...pageProps} />

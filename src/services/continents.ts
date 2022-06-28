@@ -1,4 +1,4 @@
-import axios from 'axios';
+import { api } from './api'
 
 interface ICountry {
   country: string;
@@ -18,22 +18,19 @@ interface IContinent {
 }
 
 
-const api = axios.create({
-  baseURL: "http://localhost:3333/continents"
-});
+
 
 
 export const listAll = async () => {
 
-  const response = await api.get<IContinent[]>('/');
+  const response = await api.get<IContinent[]>('/continents');
 
   return response.data;
 
 }
 export const findByName = async (name: string) => {
 
-  const response = await api.get<IContinent>(`/${name}`);
-
+  const response = await api.get(`/continents/${name}`);
   return response.data;
 
 }
