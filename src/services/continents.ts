@@ -23,14 +23,14 @@ interface IContinent {
 
 export const listAll = async () => {
 
-  const response = await api.get<IContinent[]>('/continents');
+  const response = await api.get<IContinent[]>('/api/continents');
 
   return response.data;
 
 }
 export const findByName = async (name: string) => {
 
-  const response = await api.get(`/continents/${name}`);
+  const response = await api.get(`/api/continents/${name}`);
   return response.data;
 
 }
